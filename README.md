@@ -1,6 +1,5 @@
-# Tic-Tac-Toe
-Tic Tac Toe (Tripp-Trapp-Tresko)
-Hva programmet gjør
+# Tic-Tac-Toe (Tripp-Trapp-Tresko)
+
 Dette programmet er et digitalt Tic Tac Toe-spill (Tripp-Trapp-Tresko) laget i Python med Tkinter for grafisk grensesnitt.
 Funksjoner:
 
