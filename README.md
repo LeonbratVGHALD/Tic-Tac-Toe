@@ -1,13 +1,19 @@
 # Tic-Tac-Toe (Tripp-Trapp-Tresko)
 
 Dette programmet er et digitalt Tic Tac Toe-spill (Tripp-Trapp-Tresko) laget i Python med Tkinter for grafisk grensesnitt.
+
 Funksjoner:
 
 Hovedmeny med valg: Enspiller, Flerspiller, Avslutt.
+
 Enspiller-modus: Spill mot en enkel CPU som kombinerer blokkering og tilfeldige trekk.
+
 Flerspiller-modus: To personer kan spille mot hverandre lokalt.
+
 Spilllogikk: Oppdager vinnende kombinasjoner og uavgjort.
+
 GUI: 3x3 brett med knapper, statusvisning og kontrollknapper.
+
 Restart og menyvalg etter endt runde.
 
 
