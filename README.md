@@ -73,3 +73,10 @@ andre moduler, sørg for at det virtuelle miljøet er aktivt (`source .venv/bin/
 -- macOS: Dock-ikoner for GUI-applikasjoner: Å sette et vindusikon via nettleserens favicon endrer ikke Dock-ikonet for Python GUI-applikasjoner.
 
 Hvis du får en konkret feilmelding, lim inn terminalutdataene her så hjelper jeg deg videre.
+
+## Lisens
+
+Dette prosjektet er lisensiert under MIT-lisensen. Se filen `LICENSE` i prosjektets rot for hele lisens-teksten.
+
+Copyright (c) 2025 Leon Kristoffer Bråthen
+
