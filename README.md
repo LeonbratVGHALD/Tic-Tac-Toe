@@ -10,20 +10,28 @@ python3 -m venv .venv
 source .venv/bin/activate
 ```
 
-2. Installer avhengigheter:
+2. Installer avhengigheter
+
+Det anbefales å installere avhengigheter i det aktive virtuelle miljøet. Du kan enten
+installere fra `requirements.txt` manuelt, eller la skriptet forsøke å installere
+`Flask` automatisk for deg — men kun hvis du har aktivert prosjektets virtuelle miljø
+(se trinn 1).
+
+Manuell installasjon (anbefalt):
 
 ```bash
 pip install -r requirements.txt
 ```
 
-3. (Valgfritt) Legg til en favicon: kopier en PNG-ikonfil inn i `static/`-mappen og kall den `favicon.png`.
-Fra prosjektets rot kan du for eksempel kopiere et eksisterende ikon slik:
+Automatisk (praktisk):
 
-```bash
-cp ../Icon/PNG/16_128.png static/favicon.png
-```
+Når du kjører `python TicTacToe.py` med prosjektets venv aktivt (for eksempel etter
+`source .venv/bin/activate`), vil skriptet sjekke om `Flask` finnes i det aktive miljøet
+og forsøke å installere det med `pip` hvis det mangler. Dersom venv ikke er aktivt,
+vil skriptet ikke forsøke installasjon automatisk og vil i stedet vise instruksjoner.
 
-4. Start utviklingsserveren:
+
+3. Start utviklingsserveren:
 
 ```bash
 python TicTacToe.py
@@ -48,12 +56,25 @@ python TicTacToe.py --port 5001
 HOST=127.0.0.1 PORT=5001 python TicTacToe.py
 ```
 
-- Manglende avhengigheter / ModuleNotFoundError: Sørg for at det virtuelle miljøet er aktivt (`source .venv/bin/activate`) og at du har kjørt `pip install -r requirements.txt`.
+- Manglende avhengigheter / ModuleNotFoundError: Hvis du får en importfeil for `flask` eller
+andre moduler, sørg for at det virtuelle miljøet er aktivt (`source .venv/bin/activate`).
+
+	- Hvis venv er aktivt og `Flask` mangler, kan du enten kjøre:
+
+		```bash
+		pip install -r requirements.txt
+		```
+
+	- Eller kjøre serveren direkte; når venv er aktiv, vil `python TicTacToe.py` forsøke
+		å installere `Flask` automatisk for deg hvis det ikke allerede er installert.
+
+	- Hvis venv ikke er aktivt, vil skriptet vise en kort veiledning om hvordan du oppretter
+		og aktiverer et prosjekt-venv i stedet for å endre systemet ditt automatisk.
 
 - 403 / Forbidden i nettleseren: Hvis du tidligere så en 403-feil på `http://127.0.0.1:5000/`, kontroller at Flask-serveren kjører og at du åpner riktig adresse (127.0.0.1:5000). Hvis en annen tjeneste, nettleserutvidelse eller proxy returnerer 403, prøv en annen nettleser eller deaktiver utvidelsen midlertidig.
 
-- Statisk fil lastes ikke (favicon, CSS, JS): Kontroller at filen ligger i `static/`-mappen og at `TicTacToe.py` bruker `static_folder='static'`. Sjekk nettleserens konsoll og nettverksfanen for 404-feil og filstier.
+- Statisk fil lastes ikke (CSS, JS): Kontroller at filen ligger i `static/`-mappen og at `TicTacToe.py` bruker `static_folder='static'`. Sjekk nettleserens konsoll og nettverksfanen for 404-feil og filstier.
 
-- macOS: Dock-ikoner for GUI-applikasjoner: Å sette et vindusikon via nettleserens favicon endrer ikke Dock-ikonet for Python GUI-applikasjoner. For webappen vises favicon i nettleseren; kopier en PNG til `static/favicon.png` for å få et ikon i fanen.
+-- macOS: Dock-ikoner for GUI-applikasjoner: Å sette et vindusikon via nettleserens favicon endrer ikke Dock-ikonet for Python GUI-applikasjoner.
 
 Hvis du får en konkret feilmelding, lim inn terminalutdataene her så hjelper jeg deg videre.
