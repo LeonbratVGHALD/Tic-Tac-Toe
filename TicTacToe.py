@@ -64,7 +64,7 @@ if is_project_venv_active():
         print('Could not ensure Flask is installed in the active virtual environment.')
         sys.exit(1)
 else:
-    # Do not create venv automatically. Instruct the user to activate per README.
+    # Instruct the user to activate per README.
     print('It looks like the project virtual environment is not active.')
     print('Follow the README instructions to create and activate the venv, for example:')
     print()
