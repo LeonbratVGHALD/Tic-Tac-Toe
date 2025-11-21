@@ -16,9 +16,7 @@ Det anbefales å installere avhengigheter i det aktive virtuelle miljøet. Du ka
 installere fra `requirements.txt` manuelt, eller la skriptet forsøke å installere
 `Flask` automatisk for deg — men kun hvis du har aktivert prosjektets virtuelle miljø
 (se trinn 1).
-
 Manuell installasjon (anbefalt):
-
 ```bash
 pip install -r requirements.txt
 ```
@@ -26,7 +24,6 @@ pip install -r requirements.txt
 Automatisk (praktisk):
 
 Når du kjører `python TicTacToe.py` med prosjektets venv aktivt (for eksempel etter
-`source .venv/bin/activate`), vil skriptet sjekke om `Flask` finnes i det aktive miljøet
 og forsøke å installere det med `pip` hvis det mangler. Dersom venv ikke er aktivt,
 vil skriptet ikke forsøke installasjon automatisk og vil i stedet vise instruksjoner.
 
@@ -41,9 +38,7 @@ python TicTacToe.py
 
 Notater
 - UI, CPU-logikk og spillets tilstand er implementert klient-side i `static/app.js`, så serveren fungerer kun som en statisk fil-server.
-- Appen bruker en egendefinert, stilbar bekreftelsesmodal og et mørkt tema definert i `static/style.css`.
 - For produksjon bør du kjøre appen med en WSGI-server (for eksempel `gunicorn`) i stedet for Flask sin innebygde utviklingsserver.
-- Hvis du ønsker at CPU-logikk eller vedvarende lagring skal håndteres server-side (REST API), kan jeg legge til endepunkter for det.
 
 Feilsøking
 -----------
