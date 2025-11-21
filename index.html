@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="no">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tripp-Trapp-Tresko</title>
+  <link rel="stylesheet" href="/static/style.css" />
+  <!-- Add a favicon by copying a PNG into `webapp/static/favicon.png` -->
+  <link rel="icon" href="/static/favicon.png" />
+</head>
+<body>
+  <div id="menu" class="panel">
+    <h1>Tripp-Trapp-Tresko</h1>
+    <button id="btn-single">Enspiller</button>
+    <button id="btn-multi">Flerspiller</button>
+    <button id="btn-quit">Avslutt</button>
+  </div>
+
+  <div id="game" class="panel hidden">
+    <div id="controls">
+      <span id="info">Tur: X</span>
+      <button id="btn-restart">Start på nytt</button>
+      <button id="btn-back">Tilbake til meny</button>
+      <span id="mode">Modus: -</span>
+    </div>
+    <div id="board" class="board"></div>
+  </div>
+
+  <!-- Custom confirm modal (hidden by default) -->
+  <div id="confirmModal" class="modal hidden" aria-hidden="true">
+    <div class="modal-dialog" role="dialog" aria-modal="true">
+      <div class="modal-title"></div>
+      <div class="modal-body" id="confirmMessage">Er du sikker?</div>
+      <div class="modal-actions">
+        <button id="confirmCancel" class="btn-cancel">Nei</button>
+        <button id="confirmOk" class="btn-ok">Ja</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
